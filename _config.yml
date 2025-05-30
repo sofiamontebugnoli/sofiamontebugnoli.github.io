@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Sofia Montebugnoli (Yet Another Boring Curriculum Vitae)
+title: Yet Another Boring Resume
 author: Sofia Montebugnoli
 
 email: sofia.montebugnoli3@unibo.it
