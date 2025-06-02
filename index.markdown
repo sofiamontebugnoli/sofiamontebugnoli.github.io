@@ -6,9 +6,26 @@ layout: page
 title: Curriculum Vitae
 ---
 
-### Sofia Montebugnoli
-*Bologna, Italy*  
-[sofia.montebugnoli3@unibo.it](mailto:sofia.montebugnoli3@unibo.it)  
+<div style="display: flex; align-items: flex-start; gap: 2em; margin-bottom: 1em;">
+
+  <div style="flex: 1;">
+    <h2 style="margin-top:0;margin-bottom:0.2em;">Sofia Montebugnoli</h2>
+    <div>Bologna, Italy</div>
+    <div><a href="mailto:sofia.montebugnoli3@unibo.it">sofia.montebugnoli3@unibo.it</a></div>
+    <div style="margin-top:0.5em;">
+      <a href="https://orcid.org/0009-0001-2461-8468">ORCID</a>,
+      <a href="https://github.com/sofiamontebugnoli">GitHub</a>,
+      <a href="https://it.linkedin.com/in/sofia-montebugnoli-016440284">LinkedIn</a>
+    </div>
+  </div>
+
+  <div>
+    <img src="/scholar-montebugnoli.jpg" alt="Sofia Montebugnoli"
+         style="height: 120px; width: 120px; border-radius: 8px; object-fit: cover;">
+  </div>
+
+</div>
+
 
 ---
 
@@ -57,7 +74,9 @@ Computer engineer with a strong interest Cloud Computing and 5G O-RAN systems. C
 - Completed C1-level English course at Alma English, University of Bologna (2021–2022)
 - Spanish A2-level
 
+---
+
 ### I like
 🍕 pizza, 🐱 cats, 🏋️ workouts, 🥾 hikes, and 🙈 avoiding big crowds (but I promise I’m friendly!)
 
-_Updated May 2025_
+_Updated June 2025_
