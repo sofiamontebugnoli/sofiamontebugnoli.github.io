@@ -23,7 +23,7 @@ author: Sofia Montebugnoli
 
 email: sofia.montebugnoli3@unibo.it
 description: >- # this means to ignore newlines until "baseurl:"
-  This is the personal website of Sofia Montebugnoli, a PhD student in Computer Science & Engineering at the University of Bologna.
+  This is the personal website of Sofia Montebugnoli, a postdoctoral researcher in Computer Science & Engineering at the University of Bologna.
   Here you can find my CV, publications, and other information about my research interests.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.  g. http://example.com

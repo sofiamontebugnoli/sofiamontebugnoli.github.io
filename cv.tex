@@ -1,0 +1,674 @@
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+
+\PassOptionsToPackage{hidelinks}{hyperref}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage{orcidlink}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item[]{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item[]
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}}
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item[]
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item[]
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont}
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont}
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont}
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont}
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont}
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont}
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont}
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont}
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont}
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont}
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{Sofia Montebugnoli}}
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+    \small{
+    \href{mailto:sofia.montebugnoli3@unibo.it}{sofia.montebugnoli3@unibo.it} |
+    \href{https://sofiamontebugnoli.github.io/}{sofiamontebugnoli.github.io}
+    }
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+    \small{
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/sofia-montebugnoli-016440284/}{sofia-montebugnoli} |
+    \socialicon{\faGithub} \href{https://github.com/sofiamontebugnoli}{sofiamontebugnoli} |
+    \orcidlink{0009-0001-2461-8468} 0009-0001-2461-8468
+    }
+\end{center}
+\vspace{-6mm}
+\begin{center}
+    \small{Bologna, Italy}
+\end{center}
+
+\vspace{-4mm}
+
+%----------------------------------------------------------------------------------------
+%   SHORT PRESENTATION
+%----------------------------------------------------------------------------------------
+\section{\textbf{Short Presentation}}
+\vspace{1mm}
+\small{
+I am Sofia Montebugnoli (Graduate Student Member, IEEE; Student Member, ACM), a postdoctoral researcher at the University of Bologna, Italy. I earned my PhD in Computer Science and Engineering there in July 2026 with a dissertation on a cloud-native framework for Open RAN service management and orchestration, which I developed within the PNRR RESTART project in collaboration with Imola Informatica S.p.A. My research covers cloud-native management and orchestration for Open RAN and next-generation mobile networks, including Near-RT RIC platforms, xApp/rApp lifecycle management, and Kubernetes-based orchestration. In 2025 I spent six months as a visiting researcher in Prof. Tommaso Melodia's group at Northeastern University.
+
+I chair the IEEE ComSoc Student Branch Chapter at the University of Bologna and sit on the IEEE ComSoc Young Professionals Webinar Team. From 2024 to 2026 I was Student Member Representative on the IEEE ComSoc EMEA Board. I also work as ICT Research Consultant at Imola Informatica S.p.A. and tutor two university courses.
+}
+\vspace{-2mm}
+
+%----------------------------------------------------------------------------------------
+%   RESEARCH AREA AND EXPERTISE
+%----------------------------------------------------------------------------------------
+\section{\textbf{Research Area and Expertise}}
+\vspace{1mm}
+\small{
+\textbf{Domain Areas:} 5G/6G Networks, Open Radio Access Networks (O-RAN), AI-RAN, Smart Cities, Green IT, Industry 4.0/5.0
+
+\textbf{Technical Expertise:} Cloud Continuum, Service Management and Orchestration (SMO), Near-RT RIC, xApp/rApp Development, MLOps, DevOps for Telecommunications, High Performance Computing, Cloud-Native Architectures
+}
+\vspace{-2mm}
+
+\section{\textbf{Education}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{University of Bologna ALMA MATER STUDIORUM [\href{https://site.unibo.it/middleware/en}{\faIcon{globe}}]}{Bologna, Italy}
+{PhD in Computer Science and Engineering -- XXXVIII Cycle}{March 2023 - July 2026}
+\resumeItemListStart
+\item Thesis: "A Cloud Native Solution for Service Management and Orchestration in Next Generation Networks"
+\item Final grade: Excellent (defended on July 10, 2026)
+\item Supervisors: Prof. Luca Foschini, Prof. Paolo Bellavista
+\item Research Group: Mobile Middleware Research Group [\href{https://site.unibo.it/middleware/en}{\faIcon{globe}}]
+\resumeItemListEnd
+
+\resumeSubheading
+{Northeastern University [\href{https://wineslab.github.io/}{\faIcon{globe}}]}{Boston, MA, USA}
+{PhD Visiting Research Period, Institute for the Wireless Internet of Things (WIoT)}{April 2025 - September 2025}
+\resumeItemListStart
+\item Research Group: WINES Lab, led by Prof. Tommaso Melodia
+\item Cloud-native deployment and automation of Open RAN systems
+\resumeItemListEnd
+
+\resumeSubheading
+{University of Bologna ALMA MATER STUDIORUM}{Bologna, Italy}
+{Master's Degree (Laurea Magistrale) in Computer Engineering}{September 2020 - December 2022}
+\resumeItemListStart
+\item Final Grade: 110/110 cum laude (with Honors)
+\item Thesis: "Energy consumption of parallel linear systems solver algorithms on HPC architecture"
+\item Supervisors: Prof. Anna Ciampolini, Prof. Daniela Loreti
+\resumeItemListEnd
+
+\resumeSubheading
+{University of Bologna ALMA MATER STUDIORUM}{Bologna, Italy}
+{Advanced Training Course in Industry 4.0}{2022}
+
+\resumeSubheading
+{University of Bologna ALMA MATER STUDIORUM}{Bologna, Italy}
+{Bachelor's Degree (Laurea Triennale) in Computer Engineering}{September 2017 - October 2020}
+\resumeItemListStart
+\item Thesis: "Progetto e implementazione dell'interfaccia utente per la piattaforma tuProlog"
+\resumeItemListEnd
+
+\resumeSubheading
+{Francesco Alberghetti Institute}{Imola, Italy}
+{High School Diploma in Applied Sciences}{September 2012 - July 2017}
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+%----------------------------------------------------------------------------------------
+%   ACADEMIC THIRD MISSION
+%----------------------------------------------------------------------------------------
+\section{\textbf{Academic Third Mission}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{IEEE Communications Society}{Online}
+{Member, Young Professionals Webinar Team}{September 2026 - Present}
+\resumeItemListStart
+  \item Identifying speakers and topics for the ComSoc YP series of online technical talks
+  \item Planning joint seminars with other IEEE Societies
+\resumeItemListEnd
+
+\resumeSubheading
+{IEEE Communications Society}{Bologna, Italy}
+{Student Branch Chapter Chair}{November 2025 - Present}
+\resumeItemListStart
+  \item Chair for the Student Branch Chapter of IEEE ComSoc at University of Bologna
+  \item Organization of events, seminars, and technical workshops for students in Communication-related topics
+  \item Networking events connecting academic researchers with local industry
+\resumeItemListEnd
+
+\resumeSubheading
+{IEEE Communications Society}{Europe, Middle East, Africa}
+{Student Member Representative -- EMEA Board}{May 2024 - April 2026}
+\resumeItemListStart
+  \item Representative for student members in the Europe, Middle East, and Africa region
+  \item Advocated for student interests and promoted IEEE ComSoc activities across EMEA
+\resumeItemListEnd
+
+\resumeSubheading
+{N²Women (Networking Networking Women)}{USA}
+{Social Media Co-Chair and Board Member}{February 2025 - February 2026}
+\resumeItemListStart
+  \item Managed social media outreach and community engagement for women in networking and communications research
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Professional Experience}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{University of Bologna}{Bologna, Italy}
+{Postdoctoral Researcher}{March 2026 - Present}
+\resumeItemListStart
+  \item Cloud-native management and orchestration for Open RAN, AI-RAN, and next-generation mobile networks
+  \item Design of Kubernetes-based orchestration frameworks, service mesh integrations, and intent-driven automation
+  \item Scalable resource management for disaggregated 5G/6G RAN infrastructures
+  \item Leading system integration, validation, and performance evaluation activities with academic and industrial partners
+\resumeItemListEnd
+
+\resumeSubheading
+{Northeastern University -- WINES Lab}{Boston, MA, USA}
+{Visiting Researcher}{April 2025 - September 2025}
+\resumeItemListStart
+  \item Designed and developed MANATEE, a DevOps platform for the full lifecycle management of Open RAN xApps, covering build, deployment, and automated testing against real and emulated RAN environments
+  \item Contributed to AutoRAN, funded by the NTIA Public Wireless Supply Chain Innovation Fund, on zero-touch integration, deployment, and continuous testing of multi-vendor cellular stacks; worked on the cloud-native and infrastructure-as-code components of the automation pipeline
+\resumeItemListEnd
+
+\resumeSubheading
+{University of Bologna}{Bologna, Italy}
+{Teaching Assistant -- Distributed Systems M (Master's Course)}{September 2023 - Present}
+\resumeItemListStart
+  \item Preparation and delivery of practical exercises on DevOps, Jakarta EE, WildFly, Docker, Spring, Spring Boot, and Kubernetes
+  \item 30 hours per academic year (2023/24, 2024/25, 2025/26)
+\resumeItemListEnd
+
+\resumeSubheading
+{University of Bologna}{Bologna, Italy}
+{Teaching Assistant -- Computer Networks T (Bachelor's Course)}{September 2025 - Present}
+\resumeItemListStart
+  \item Academic tutor for the Bachelor's course taught by Prof. Antonio Corradi, Prof. Armir Bujari, and Prof. Andrea Sabbioni
+  \item 30 hours for academic year 2025/26
+\resumeItemListEnd
+
+\resumeSubheading
+{Imola Informatica S.p.A. -- Technology Transfer}{Imola, Italy}
+{ICT Research Consultant -- ImolaLab R\&D Department}{November 2023 - Present}
+\resumeItemListStart
+  \item Contribution to R\&D IT department supporting technology transfer between academia and industry
+  \item Assistance for Bachelor and Master thesis internships bridging university research with industrial applications
+  \item Research and evaluation of cloud products and emerging technologies for practical deployment
+\resumeItemListEnd
+
+\resumeSubheading
+{ECIPAR Regionale for CNA}{Bologna, Italy}
+{Engineering Lecturer -- Front-End Web Technologies}{February 2023 - June 2023}
+\resumeItemListStart
+  \item Delivered 60 hours of lectures on HTML, CSS, JavaScript, and React to high-school graduates
+  \item Curriculum designed to prepare students for full-stack developer positions
+\resumeItemListEnd
+
+\resumeSubheading
+{University of Bologna / Injenia S.r.l.}{Bologna, Italy}
+{Research Assistant}{January 2023 - February 2023}
+\resumeItemListStart
+  \item Consulting project on multicloud observability using Terraform, Kubernetes, and ElasticSearch
+  \item Developed solutions for text detection and monitoring across cloud platforms
+\resumeItemListEnd
+
+\resumeSubheading
+{Officine Volta S.p.A.}{Castel San Pietro Terme, Italy}
+{Marketing Assistant}{October 2018 - December 2018}
+\resumeItemListStart
+  \item Updated the 2019 price list with price revisions and graphic redesign using Adobe InDesign, Illustrator, and Excel
+\resumeItemListEnd
+
+\resumeSubheading
+{Officine Volta S.p.A.}{Castel San Pietro Terme, Italy}
+{Marketing Assistant}{June 2016 - July 2016}
+\resumeItemListStart
+  \item Designed a new price list format and a customized offer proposal using Adobe InDesign, Illustrator, and Photoshop
+\resumeItemListEnd
+
+\resumeSubheading
+{Emerson Network Power}{Castel Guelfo di Bologna, Italy}
+{ICT System Administrator Intern}{June 2015 - July 2015}
+\resumeItemListStart
+  \item System administration: Ubuntu OS setup, VPN configuration, cloud computing maintenance
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Publications} \hfill \textcolor{darkblue}{\scriptsize J=Journal, C=Conference}}
+\vspace{0.2mm}
+
+\small{
+\textbf{Author ORCID}: \href{https://orcid.org/0009-0001-2461-8468}{0009-0001-2461-8468}
+
+% TODO: refresh these figures from Google Scholar before submitting
+%\textbf{Google Scholar}: \textit{h-Index}: 2, \textit{i10-Index}: 0, \textit{Citations}: 17
+}
+\vspace{2mm}
+
+\small{
+\begin{enumerate}[label={[\arabic*]}]
+
+    \item \textbf{[C]} S. Montebugnoli, L. Foschini, ``A Multicloud Observability Support Based on ElasticSearch for Cloud-native Smart Cities Services,'' 2023 IEEE Symposium on Computers and Communications (ISCC). IEEE, 2023. DOI: \href{https://doi.org/10.1109/ISCC58397.2023.10218075}{10.1109/ISCC58397.2023.10218075}.
+
+    \item \textbf{[C]} S. Montebugnoli, A. Ciampolini, ``Energy consumption comparison of parallel linear systems solver algorithms on HPC infrastructure,'' 2023 The International Conference for High-Performance Computing, Networking, Storage, and Analysis (SC23). ACM, 2023. DOI: \href{https://doi.org/10.1145/3624062.3624266}{10.1145/3624062.3624266}.
+
+    \item \textbf{[C]} J. L. Herrera Gonzalez, S. Montebugnoli, D. Scotece, L. Foschini, ``xSTART: xApp Simulated Evaluation Environment for Developers,'' 2024 IEEE International Workshop on Metrology for Industry 4.0 \& IoT (MetroInd4.0\&IoT2024). IEEE, 2024. DOI: \href{https://doi.org/10.1109/MetroInd4.0IoT61288.2024.10584214}{10.1109/MetroInd4.0IoT61288.2024.10584214}.
+
+    \item \textbf{[C]} J. L. Herrera, S. Montebugnoli, P. Bellavista and L. Foschini, ``Enabling Reusable and Comparable xApps in the Machine Learning-Driven Open RAN,'' 2024 IEEE 25th International Conference on High-Performance Switching and Routing (HPSR), Pisa, Italy, 2024. DOI: \href{https://doi.org/10.1109/HPSR62440.2024.10635962}{10.1109/HPSR62440.2024.10635962}.
+
+    \item \textbf{[C]} S. Montebugnoli, A. Sabbioni, L. Foschini, ``Evaluating Mesh Communications in Disaggregated Near-RT RIC for 5G Open RAN: a Functional and Performance Analysis,'' 2024 IEEE Global Communications Conference (Globecom), Cape Town, South Africa, 2024. DOI: \href{https://doi.org/10.1109/GLOBECOM52923.2024.10901151}{10.1109/GLOBECOM52923.2024.10901151}.
+
+    \item \textbf{[J]} J. L. Herrera, S. Montebugnoli, D. Scotece, L. Foschini and P. Bellavista, ``A Tutorial on O-RAN Deployment Solutions for 5G: From Simulation to Emulated and Real Testbeds,'' in IEEE Communications Surveys \& Tutorials, 2025. DOI: \href{https://doi.org/10.1109/COMST.2025.3577687}{10.1109/COMST.2025.3577687}.
+
+    \item \textbf{[C]} S. Montebugnoli, A. Sabbioni, F. Callegati, L. Foschini, and P. Bellavista, ``CLO5ER: a Composable Lightweight Observability for 5G RAN Environment inside Near RT RIC,'' 2025 IEEE International Conference on Communications (ICC), Montreal, Canada, 2025. DOI: \href{https://doi.org/10.1109/ICC52391.2025.11162022}{10.1109/ICC52391.2025.11162022}.
+
+    \item \textbf{[C]} A. Sabbioni, L. Serfilippi, S. Montebugnoli, A. Bujari, and A. Corradi, ``MLCOps: a Platform to Support Cloud Continuum Machine Learning Operations,'' 30th IEEE Symposium on Computers and Communications (ISCC), Bologna, Italy, 2025. DOI: \href{https://doi.org/10.1109/ISCC65549.2025.11326358}{10.1109/ISCC65549.2025.11326358}.
+
+    \item \textbf{[C]} S. Montebugnoli, E. Drudi, A. Sabbioni, G. Di Modica, and L. Foschini, ``TORNADO: TOSCA-Enabled Orchestration for RAN Network Functions Automating DevOps in O-Cloud,'' 30th IEEE Symposium on Computers and Communications (ISCC), Bologna, Italy, 2025. DOI: \href{https://doi.org/10.1109/ISCC65549.2025.11325950}{10.1109/ISCC65549.2025.11325950}.
+
+    \item \textbf{[J]} S. Montebugnoli, A. Sabbioni, L. Foschini, and A. Corradi, ``Service Mesh: the Rise of Event-Driven Asynchronous Mesh in Cloud Continuum,'' in IT Professional, vol. 28, no. 1, pp. 51-58, Jan.-Feb. 2026, DOI: \href{https://doi.org/10.1109/MITP.2025.3605101}{10.1109/MITP.2025.3605101}.
+
+    \item \textbf{[J]} J. L. Herrera, S. Montebugnoli, P. Bellavista and L. Foschini, ``Management and Optimization of xApp and Near-Real-Time RIC Deployment in the Edge,'' in IEEE Networking Letters. DOI: \href{https://doi.org/10.1109/LNET.2026.3664166}{10.1109/LNET.2026.3664166}.
+
+    \item \textbf{[C]} N. Giulianelli, A. Sabbioni, S. Montebugnoli, A. Bujari, and A. Corradi, ``KOTO: A Kubernetes-Based Platform for Secure and Scalable OT Orchestration in Industry 5.0,'' In Proceedings of the 18th IEEE/ACM International Conference on Utility and Cloud Computing (UCC'25). ACM, 2025. DOI: \href{https://doi.org/10.1145/3773274.3774700}{10.1145/3773274.3774700}.
+
+    \item \textbf{[C]} N. Giulianelli, A. Sabbioni, S. Montebugnoli, A. Bujari and A. Corradi, ``Forging Industry 5.0 DevOps: Towards Secure and Scalable OT Orchestration Powered by Kubernetes,'' 2026 IEEE 23rd Consumer Communications \& Networking Conference (CCNC), Las Vegas, NV, USA, 2026. DOI: \href{https://doi.org/10.1109/CCNC65079.2026.11366408}{10.1109/CCNC65079.2026.11366408}.
+
+    \item \textbf{[C]} S. Montebugnoli, A. Benenati, A. Sabbioni, and L. Foschini, ``Bridging Cloud and Edge for Digital Twins: A Qualitative and Quantitative Study of WASM, Unikernels, and Containers,'' ICC 2026, IEEE International Conference on Communications, Glasgow, United Kingdom, 2026, pp. 1-6, DOI: \href{https://doi.org/10.1109/ICC59461.2026.11587424}{10.1109/ICC59461.2026.11587424}.
+
+    \item \textbf{[J]} S. Montebugnoli, A. Sabbioni, L. Foschini, P. Bellavista, ``PANDA5: A Specialized Kubernetes Control Plane to Support QoS-Aware O-RAN xApp Orchestration,'' IEEE Communications Magazine. DOI: \href{https://doi.org/10.1109/MCOM.001.2500679}{10.1109/MCOM.001.2500679}.
+
+    \item \textbf{[C]} A. Benenati, S. Montebugnoli, I. Guarino, L. Foschini, ``DREAMS: Adaptive Orchestration of Network Digital Twin Models at the RAN Edge,'' 2026 IEEE Global Communications Conference (Globecom), Macau, China, 2026 (Accepted).
+
+\end{enumerate}
+
+\subsection*{Works Under Review}
+
+\begin{enumerate}[label={[\arabic*]}, start=17]
+
+    \item \textbf{[J]} S. Zandoli, D. Scotece, S. Montebugnoli, L. Foschini, ``TiREx: Tilt Regulation Explainability through xApp with DRL.'' Submitted to Computer Networks, September 2025.
+
+    \item \textbf{[J]} A. Sabbioni, S. Montebugnoli, A. Bujari, P. Bellavista, ``I-ORCAS: Intent-based ORchestration for Cloud Continuum Automation via Serverless.'' Submitted to Springer Nature Link Journal of Cloud Computing, October 2025.
+
+    \item \textbf{[J]} S. Montebugnoli, L. Bonati, A. Sabbioni, L. Foschini, P. Bellavista, S. D'Oro, M. Polese, T. Melodia, ``MANATEE: A DevOps Platform for xApp Lifecycle Management and Testing in Open RAN.'' Submitted to IEEE Transactions on Network and Service Management, January 2026. DOI: \href{https://doi.org/10.48550/arXiv.2601.14009}{10.48550/arXiv.2601.14009}.
+
+
+    \item \textbf{[J]} A. Sabbioni, S. Montebugnoli, C. Chen, L. Foschini, A. Corradi, ``DRACO: SLA-Aware Resource Management for Cloud Continuum Control Planes.'' Submitted to IEEE Software, July 2026.
+
+    \item \textbf{[J]} S. Montebugnoli, A. Lacava, N. Mohamadi, P. Brach del Prever, M. Polese, P. Bellavista, T. Melodia, ``Managing the Managers: A Survey on AI-RAN Control, Orchestration, and Automation Towards 6G'' Submitted to IEEE Communication Surveys and Tutorials, September 2026.
+
+    \item \textbf{[J]} S. Montebugnoli, A. Benenati, A. Sabbioni, L. Foschini, and P. Bellavista, ``KOALA: A Digital Twin-driven, SLO-aware orchestrator for 6G AI-and-RAN platforms.'' Submitted to Computer Networks Elsevier, October 2026. DOI: \href{https://dx.doi.org/10.2139/ssrn.7642217}{10.2139/ssrn.7642217}.
+
+\end{enumerate}
+}
+
+\section{\textbf{Honors and Awards}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {Best Presentation Award}
+  {IEEE ComSoc - CSIM 6G Industrial Dissemination Day}
+  {December 2025}
+  {{}[\href{https://csim.committees.comsoc.org/activities/ieee-csim-idd-event/}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\resumeItemListStart
+  \item Paper: "AI-Enhanced RAN Infrastructure: Dynamic Resource Orchestration for Sustainable 6G Computing"
+\resumeItemListEnd
+
+\resumeProject
+  {Best Paper Award}
+  {IEEE ISCC 2023 -- 13th Workshop on Management of Cloud and Smart City Systems (MoCS)}
+  {July 2023}
+  {{}[\href{https://2023.ieee-iscc.org/}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\resumeItemListStart
+  \item Paper: "A Multi-Cloud Observability Support Based on ElasticSearch for Cloud-Native Smart Cities Services"
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+%----------------------------------------------------------------------------------------
+%   TUTORIALS
+%----------------------------------------------------------------------------------------
+\section{\textbf{Tutorials}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {IEEE CCNC 2027 -- Tutorial TUT-01}
+  {From Simulation to AI-Native Deployment: Building, Testing, and Operating Open RAN Control Applications}
+  {January 9, 2027}
+  {{}[\href{https://ccnc2027.ieee-ccnc.org/events/tut-01-simulation-ai-native-deployment-building-testing-and-operating-open-ran-control}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\resumeItemListStart
+  \item Half-day tutorial; sole in-person presenter, with L. Foschini and P. Bellavista
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Research Projects}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {AutoRAN (Northeastern University)}
+  {NTIA Public Wireless Supply Chain Innovation Fund -- Zero-touch integration and testing of multi-vendor cellular stacks}
+  {2025}
+  {{}}
+\resumeItemListStart
+  \item Cloud-native and infrastructure-as-code components of the automation pipeline
+\resumeItemListEnd
+
+\resumeProject
+  {RESTART SUPER Task}
+  {Next Generation EU Funds - PNRR National Project -- Integration of optimization models in RAN and Core 5G}
+  {March 2023 - February 2026}
+  {{}[\href{https://fondazione-restart.it/projects/s2-super/}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\resumeItemListStart
+  \item Integration of optimization models, virtualization, orchestration, and management solutions in 5G architecture
+  \item Focus on RAN intelligent controllers and service orchestration
+\resumeItemListEnd
+
+\resumeProject
+  {RESTART Industrial Networks (IN) Task}
+  {Next Generation EU Funds - PNRR National Project -- Network architectures for Industrial IoT}
+  {March 2023 - February 2026}
+  {{}[\href{https://fondazione-restart.it/projects/s9-in/}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\resumeItemListStart
+  \item Investigation of network architectures and computing infrastructures for IIoT applications
+  \item Research on 5G integration with industrial applications
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Thesis Supervision}}
+\vspace{-0.4mm}
+\small{
+Co-supervised 4 Master's theses and more than 20 Bachelor's theses and project activities in cloud continuum, observability, orchestration, and 5G networking.
+
+
+\textbf{Project Activities:}
+\begin{itemize}[leftmargin=*, labelsep=1mm, itemsep=0.5mm]
+\item[--] "Polybench Isolation Technologies" -- Alessio Benenati (Supervisor: L. Foschini)
+\end{itemize}
+}
+
+\section{\textbf{Professional Service}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {Publication Chair}
+  {European Wireless (EW 2026), Rimini, Italy}
+  {2026}
+  {{}[\href{https://ew2026.european-wireless.org/\#committees}{\textcolor{darkblue}{\faIcon{globe}}}]}
+
+\resumeProject
+  {Web Co-Chair}
+  {31st IEEE Symposium on Computers and Communications (ISCC 2026)}
+  {2026}
+  {{}[\href{https://ieee-iscc.computer.org/2026/}{\textcolor{darkblue}{\faIcon{globe}}}]}
+
+\resumeProject
+  {Web Co-Chair}
+  {IEEE CAMAD 2025 -- Computer-Aided Modeling and Design of Communication Links and Networks}
+  {2025}
+  {{}[\href{https://camad2025.ieee-camad.org/}{\textcolor{darkblue}{\faIcon{globe}}}]}
+
+\resumeProject
+  {Web Co-Chair}
+  {30th IEEE Symposium on Computers and Communications (ISCC 2025), Bologna, Italy}
+  {2025}
+  {{}[\href{https://ieee-iscc.computer.org/2025/}{\textcolor{darkblue}{\faIcon{globe}}}]}
+
+\resumeSubHeadingListEnd
+
+\small{
+\textbf{Technical Program Committee:}
+\begin{itemize}[leftmargin=*, labelsep=1mm, itemsep=0.5mm]
+\item[--] IEEE CCNC 2027 -- TPC Member, Track T3: Testbeds, Experimentation and Datasets for Communications and Networking
+\item[--] IWNC 2026 -- TPC Member
+\item[--] IEEE ISCC 2026 -- TPC Reviewer
+\item[--] MoCS 2026 Workshop at IEEE ISCC 2026 -- TPC Member
+\item[--] IEEE ICC 2026 Workshop WS-01 on Open RAN -- TPC Member
+\item[--] IEEE ISCC 2025 -- TPC Reviewer
+\item[--] MoCS 2025 Workshop at IEEE ISCC 2025 -- TPC Member
+\item[--] IEEE WCNC 2025 Workshop WS05 on Open Radio Access Networks -- TPC Member
+\end{itemize}
+
+\vspace{1mm}
+\textbf{Peer Review Activity:}\\
+\textit{Conferences:} IEEE ICC 2025, IEEE WCNC 2025, CNSM 2025, WiMob 2025, IEEE CCNC 2026\\
+\textit{Journals:} IEEE Transactions on Green Communications and Networking (TGCN) 2026, IEEE Transactions on Network and Service Management (TNSM) 2024-2026, IEEE Networking Letters 2026, IEEE Vehicular Technology Magazine 2026, Elsevier Computer Networks 2025-2026, Elsevier Computer Communications 2026, Elsevier Journal of Network and Computer Applications 2026, Elsevier Sustainable Computing: Informatics and Systems 2026, Elsevier MethodsX 2024
+}
+
+%----------------------------------------------------------------------------------------
+%   SKILLS
+%----------------------------------------------------------------------------------------
+\section{\textbf{Skills \& Abilities}}
+\vspace{-0.4mm}
+ \resumeHeadingSkillStart
+  \resumeSubItem{Infrastructure Platforms:}
+    {Kubernetes, Docker, Docker Compose, OpenStack, Terraform, Helm, Knative, OpenShift, Proxmox, Apache Kafka, RabbitMQ, MQTT, Ceph, ElasticSearch Stack (ELK), Prometheus, Grafana}
+  \resumeSubItem{5G \& O-RAN Platforms:}
+    {Near-RT RIC, Non-RT RIC, SMO, xApp/rApp Development, NS3, ns-O-RAN, OpenAirInterface (OAI), srsRAN, FlexRIC}
+  \resumeSubItem{Service Mesh \& Orchestration:}
+    {Istio, Istio Ambient Mesh, Linkerd, Cilium, TOSCA, Crossplane}
+  \resumeSubItem{DevOps \& CI/CD:}
+    {Git, GitHub, GitLab, Ansible, CI/CD Pipelines, ArgoCD, Jenkins}
+  \resumeSubItem{System Administration:}
+    {Linux/Unix, Bash Scripting, VPN Configuration, Network Configuration, Virtualization (KVM, LXD)}
+  \resumeSubItem{Programming Languages:}
+    {Python, C/C++, Java, Go, Rust, Bash, SQL}
+  \resumeSubItem{Web Technologies:}
+    {HTML, CSS, JavaScript, React, Node.js, Spring, Spring Boot, Jakarta EE, RESTful APIs, WildFly}
+  \resumeSubItem{Database Systems:}
+    {MySQL, MongoDB, ElasticSearch, PostgreSQL, InfluxDB}
+  \resumeSubItem{Machine Learning \& Data:}
+    {scikit-learn, Pandas, NumPy, TensorFlow, MLflow, MCP, RAG}
+  \resumeSubItem{HPC \& Scientific Computing:}
+    {ScaLAPACK, MPI, SLURM, Linear Algebra, Optimization Algorithms}
+  \resumeSubItem{Development Tools:}
+    {VS Code, IntelliJ IDEA, Eclipse, vim, LaTeX}
+  \resumeSubItem{Other Tools:}
+    {Adobe Creative Suite (InDesign, Illustrator, Photoshop), Wireshark, tcpdump}
+ \resumeHeadingSkillEnd
+
+\section{\textbf{Conference Attendance}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+\resumePOR{IEEE ICC 2026}{-- Glasgow, United Kingdom}{May 2026}
+\resumePOR{Cloud Native Days Italy 2026 (CNCF)}{-- Bologna, Italy}{May 2026}
+\resumePOR{Open6G + AI Workshop}{-- Boston, MA, US}{March 2026}
+\resumePOR{Next-Generation EU RESTART Project Plenary Meeting}{-- Rome, Italy}{January 2026}
+\resumePOR{30th IEEE ISCC}{-- Bologna, Italy}{July 2025}
+\resumePOR{IEEE ICC 2025}{-- Montreal, Canada}{June 2025}
+\resumePOR{Next-Generation EU RESTART Project Plenary Meeting}{-- Palermo, Italy}{January 2025}
+\resumePOR{IEEE GLOBECOM 2024}{-- Cape Town, South Africa}{December 2024}
+\resumePOR{IEEE HPSR 2024}{-- Pisa, Italy}{July 2024}
+\resumePOR{Lipari School on Advanced Networking Systems}{-- Lipari, Italy}{July 2024}
+\resumePOR{RESTART Plenary Workshop}{-- Catania, Italy}{July 2024}
+\resumePOR{IEEE MetroInd4.0\&IoT 2024}{-- Florence, Italy}{May 2024}
+\resumePOR{5G\&Beyond Conference}{-- Rome, Italy}{April 2024}
+\resumePOR{SC'23 -- Supercomputing Conference}{-- Denver, CO, USA}{November 2023}
+\resumePOR{Next-Generation EU RESTART Tech Camp on 5G and O-RAN}{-- Rome, Italy}{September 2023}
+\resumePOR{SSIE Summer School}{-- Bressanone, Italy}{July 2023}
+\resumePOR{28th IEEE ISCC 2023}{-- Tunis, Tunisia}{July 2023}
+\resumeSubHeadingListEnd
+
+\section{\textbf{Professional Memberships}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+\resumePOR{IEEE}
+    {-- Graduate Student Member}
+    {2022 - Present}
+\resumePOR{IEEE Communications Society (ComSoc)}
+    {-- Student Member}
+    {2023 - Present}
+\resumePOR{ACM}
+    {-- Student Member}
+    {2023 - Present}
+\resumePOR{N²Women}
+    {-- Member}
+    {2025 - Present}
+\resumeSubHeadingListEnd
+
+\section{\textbf{Additional Information}}
+\vspace{-0.4mm}
+\small{
+\textbf{Languages:} Italian (Native), English (Full Professional Proficiency -- C1), Spanish (A1)
+
+\textbf{Soft Skills:} Public Relations, Event Planning, Organizational Skills, Technical Writing, Scientific Presentations
+
+\vspace{1 cm}
+In compliance with the GDPR and the Italian Legislative Decree no. 196 dated 30/06/2003, I hereby authorize the recipient to use and process my personal details contained in this document.
+}
+
+\end{document}
